@@ -1,6 +1,5 @@
 import { createServer } from "node:http";
 import { AddressInfo } from "node:net";
-import { createApp } from "../src/app.js";
 
 async function requestRoute(base: string, route: string) {
   const response = await fetch(base + route);
@@ -11,6 +10,8 @@ async function requestRoute(base: string, route: string) {
 }
 
 async function main() {
+  process.env.NODE_ENV = "test";
+  const { createApp } = await import("../src/app.js");
   const server = createServer(createApp());
   await new Promise<void>((resolve) => server.listen(0, resolve));
   const { port } = server.address() as AddressInfo;
@@ -42,7 +43,15 @@ async function main() {
     }
   }
 
-  server.close();
+  await new Promise<void>((resolve, reject) => {
+    server.close((error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve();
+    });
+  });
   console.log("Smoke check passed.");
 }
 
