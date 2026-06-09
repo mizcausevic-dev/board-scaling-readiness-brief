@@ -201,6 +201,31 @@ export function renderOverview() {
     <section class="section">
       <h2>Proof findings</h2>
       <ul>${risks}</ul>
+    </section>
+    <section class="section">
+      <h2>What this product does</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="chip">GTM analyst lens</div>
+          <h3>Separates real scaling readiness from optimistic pipeline language</h3>
+          <p>The brief shows which expansion lanes have enough owner confidence, execution proof, and customer-facing value to support a real acceleration story.</p>
+        </article>
+        <article class="card">
+          <div class="chip">SaaS value lens</div>
+          <h3>Connects expansion value to execution drag</h3>
+          <p>Leadership can compare addressable value, drag, readiness, and acceleration confidence before committing budget, headcount, board narrative, or partner motion.</p>
+        </article>
+        <article class="card">
+          <div class="chip">Technical proof</div>
+          <h3>Structured readiness routes and reproducible board packet data</h3>
+          <p>The repo includes typed services, generated fixtures, route renderers, API payloads, CLI output, smoke checks, and synthetic verification boundaries.</p>
+        </article>
+        <article class="card">
+          <div class="chip">What these repos have in common</div>
+          <h3>Decision surfaces, not brochure pages</h3>
+          <p>Kinetic Gain repos package operational evidence into executive-ready lanes: what is exposed, what can save money, what deserves investment, and what story is safe to tell.</p>
+        </article>
+      </div>
     </section>`,
     "Board-ready surface for scaling readiness, execution drag, owner confidence, and acceleration safety across the executive estate."
   );
